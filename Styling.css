@@ -12,26 +12,112 @@
     font-style: normal;
 }
 
-@keyframes slideInLeft {
+@keyframes slideInUp {
     0% {
-        transform: translateX(-20%);
+        transform: translateY(500%);
+        opacity: 0;
+        z-index: -1;
+    }
+
+    40%
+    {
+        z-index: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+        z-index: 0;
+    }
+}
+
+@keyframes slideInUp2 {
+    0% {
+        transform: translateY(500%);
+        opacity: 0;
+        z-index: -1;
+    }
+
+    40%
+    {
+        z-index: 0;
+    }
+
+    100% {
+        transform: translateY(100%);
+        opacity: 1;
+        z-index: 0;
+    }
+}
+
+@keyframes FadeIn {
+    0% {
         opacity: 0;
     }
 
     100% {
-        transform: translateX(0);
         opacity: 1;
     }
 }
 
 @keyframes slideInDown {
     0% {
-        transform: translateY(-20%);
+        transform: translateY(-100px);
         opacity: 0;
     }
 
     100% {
         transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown2 {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    15%
+    {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDownUnderline
+{
+    0% {
+        transform: translateY(-100px) scale(0.6);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px) scale(0.6);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDownUnderline2
+{
+    0% {
+        transform: translateY(-100px) scale(0.6);
+        opacity: 0;
+    }
+
+    15%
+    {
+        transform: translateY(-100px) scale(0.6);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px) scale(0.6);
         opacity: 1;
     }
 }
@@ -60,11 +146,13 @@
         height: 75px;
         left: 0px;
         z-index: 10;
+        animation: FadeIn 1s ease-in-out 0s 1 forwards;
     }
 
     .cover {
         width: 100vw;
         height: 75px;
+        background-color: rgb(255, 128, 128);
     }
 
     #Socials {
@@ -98,11 +186,11 @@
         height: 960px;
         width: 100vw;
         margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         background-color: rgb(250, 250, 250);
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
     
         background-image: url('pink-7761356_1280.png');
         background-size: cover;
@@ -125,6 +213,8 @@
         border: 7px solid rgb(20, 25, 40);
         border-radius: 50%;
         transition: 0.3s ease-out;
+
+        animation: FadeIn .8s ease-in;
     }
 
     #picture:hover {
@@ -138,13 +228,18 @@
         font-size: 200%;
         color: rgb(20, 30, 30);
         z-index: 1;
+
+        animation: slideInDown 1s linear;
     }
 
-    .Tag {
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        transition: all 0.3s ease-out;
+    .Tag
+    {
+        animation: slideInDownUnderline 0.5s ease-out
+    }
+
+    .Tag2
+    {
+        animation: slideInDownUnderline2 0.7s ease-out;
     }
 
     .Tag:hover {
@@ -203,6 +298,14 @@
         color: rgb(20, 25, 40);
         top: 70%;
         font-weight: 900;
+
+        
+    }
+
+    .fadeInText
+    {
+        animation: slideInUp 0.8s ease-out forwards;
+        display: inline-block;
     }
 
     #featured {
@@ -213,6 +316,8 @@
         align-items: center;
         padding: 0px 0px 40px 0px;
         border-bottom: 2px solid rgba(255, 180, 180, 0.5);
+
+        animation: FadeIn 0.7s ease-out;
     }
 
     .featuredText {
@@ -268,7 +373,7 @@
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.6);
         background-blend-mode: overlay;
     }
 
@@ -288,12 +393,11 @@
         align-items: center;
         text-align: center;
         margin: 10px auto auto auto;
-        transition: all 0.3s ease-in-out;
     }
 
-    .projectContainer:hover
+    .project:hover
     {
-        transform: translateY(-5%);
+        transform: translateY(-3%);
     }
     
     .project {
@@ -303,6 +407,7 @@
         border-radius: 15px;
         border: 2px solid rgb(20, 30, 30);
         outline: 1px solid rgba(20, 30, 30, 0.2);
+        transition: all 0.3s ease-in-out;
     }
     
     .projectDescription {
@@ -560,7 +665,13 @@
         background-color: rgb(255, 128, 128);
         border-radius: 15px;
         border: 2px solid rgb(20, 30, 30);
-        outline: 1px solid rgba(20, 30, 30, 0.2)
+        outline: 1px solid rgba(20, 30, 30, 0.2);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .project:hover
+    {
+        transform: translateY(-5%);
     }
 
     .projectDescription {
